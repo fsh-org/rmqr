@@ -1,0 +1,32 @@
+{
+  "name": "rmqr",
+  "version": "0.1.0",
+  "author": "Inventionpro & Frostzzone",
+  "description": "Rectangular Micro QR code generator for node",
+  "homepage": "https://github.com/fsh-org/rmqr#readme",
+  "license": "ISC",
+  "scripts": {},
+  "type": "commonjs"
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fsh-org/rmqr.git"
+  },
+  "keywords": [
+    "fsh",
+    "rmqr",
+    "qr",
+    "generator"
+  ],
+  "bugs": {
+    "url": "https://github.com/fsh-org/rmqr/issues"
+  },
+  "dependencies": {
+    "sharp": "^0.33.4"
+  },
+  "engines": {
+    "node": "^18.17.0 || ^20.3.0 || >=21.0.0",
+    "libvips": ">=8.15.2"
+  },
+}
