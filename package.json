@@ -6,7 +6,7 @@
   "homepage": "https://github.com/fsh-org/rmqr#readme",
   "license": "ISC",
   "scripts": {},
-  "type": "commonjs"
+  "type": "commonjs",
   "main": "index.js",
   "types": "index.d.ts",
   "repository": {
@@ -30,5 +30,5 @@
   "engines": {
     "node": "^18.17.0 || ^20.3.0 || >=21.0.0",
     "libvips": ">=8.15.2"
-  },
+  }
 }
