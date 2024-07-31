@@ -42,7 +42,7 @@ class rMQR {
     }
 
     // Fetch for now because implementing the whole qr specification is a *bit* hard
-    let req = await fetch('https://asia-northeast1-rmqr-generator.cloudfunctions.net/generate-rmqr-code'{
+    let req = await fetch('https://asia-northeast1-rmqr-generator.cloudfunctions.net/generate-rmqr-code', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
