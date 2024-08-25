@@ -19,10 +19,11 @@ let data = rmqr.generate('Other text', {
   correction: correction.high // Options: auto, medium, high (high has a lower max characters)
 })
 
-console.log(rmqr.toImage(data, 'jpg', 'uri'))
+console.log(rmqr.toImage(data, 'jpg', 'uri', 10))
 /*
 1st the object from the generate
 2nd argument is a image extension (png, jpg, jpeg, webp, tiff...)
 3rd is the way the data will be presented (buffer or uri)
+4th number of pixels per color
 */
 ```
