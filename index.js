@@ -18,26 +18,21 @@ class rMQR {
   async generate(text, options={}) {
     if (typeof text !== 'String') {
       throw new Error('Expected String recived instance of '+typeof text)
-      return;
     }
     if (!text) {
       throw new Error('Input must be atleast one letter')
-      return;
     }
     if (text.length > (150 - (options?.correction === correction.high ? 76 : 0))) {
       throw new Error('Input must be atleast one letter')
-      return;
     }
     if (options.strategy) {
       if (!Object.values(strategy).includes(options.strategy)) {
         throw new Error('Unknown strategy');
-        return;
       }
     }
     if (options.correction) {
       if (!Object.values(correction).includes(options.correction)) {
         throw new Error('Unknown correction');
-        return;
       }
     }
 
@@ -56,11 +51,11 @@ class rMQR {
     let res = await req.json();
     return res;
   }
-  toImage(data, format='png', type='buffer') {
+  toImage(data, format='png', type='buffer', size=8) {
     let alias = {
       jpg: 'jpeg'
     }
-    if (Object.keys().includes(format)) format = alias[format];
+    if (Object.keys(alias).includes(format)) format = alias[format];
     let qr = new sharp(Buffer.from(data.qr.flat().map(p=>!p*255)), {
       raw: {
         width: data.width,
@@ -74,18 +69,15 @@ class rMQR {
       })
       .toBuffer()
       .then(outputBuffer => {
-        Object.keys().map(key => {alias[alias[key]] = key; delete alias[key]});
-        if (Object.keys().includes(format)) format = alias[format];
+        Object.keys(alias).map(key => {alias[alias[key]] = key; delete alias[key]});
+        if (Object.keys(alias).includes(format)) format = alias[format];
         switch (type) {
           case 'buffer':
             return outputBuffer;
-            break;
           case 'uri':
             return 'data:image/'+format+';base64,'+outputBuffer.toString('base64');
-            break;
           default:
             throw new Error('Unsoported type')
-            return;
         }
       })
   }
