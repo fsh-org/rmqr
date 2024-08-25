@@ -1,6 +1,6 @@
 {
   "name": "rmqr",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Inventionpro & Frostzzone",
   "description": "Rectangular Micro QR code generator for node",
   "homepage": "https://github.com/fsh-org/rmqr#readme",
