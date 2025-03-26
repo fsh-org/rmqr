@@ -1,3 +1,15 @@
+declare const strategy: {
+    balanced: number;
+    'min-height': number;
+    minHeight: number;
+    'min-width': number;
+    minWidth: number;
+};
+declare const correction: {
+    auto: number;
+    medium: number;
+    high: number;
+};
 declare class rMQR {
     /**
   * @param {string} text
@@ -17,18 +29,6 @@ declare class rMQR {
         qr: number[][];
         width: number;
         height: number;
-    }, format?: string | null, type?: string | null, size?: number | null): any;
-}
-export const strategy: {
-    balanced: number;
-    'min-height': number;
-    minHeight: number;
-    'min-width': number;
-    minWidth: number;
-};
-export namespace correction {
-    let auto: number;
-    let medium: number;
-    let high: number;
+    }, format?: string, type?: string, size?: number): Promise<string|unknown>;
 }
 export { rMQR as rmqr };
